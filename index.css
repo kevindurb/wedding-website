@@ -109,6 +109,7 @@ a.rsvp {
   flex-wrap: nowrap;
   overflow-x: scroll;
   max-height: 100vh;
+  -webkit-overflow-scrolling: touch;
 }
 
 .page .right-arrow {
