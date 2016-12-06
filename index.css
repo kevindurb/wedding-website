@@ -3,6 +3,11 @@
   100% { opacity: 0.8; }
 }
 
+@keyframes hide-opacity {
+  0% { opacity: 0.8; }
+  100%   { opacity: 0; }
+}
+
 a, a:visited {
   color: inherit;
 }
@@ -46,7 +51,14 @@ body * {
   border-bottom: 10px solid #fff;
   transform: rotate(-45deg);
   opacity: 0.8;
+  animation-fill-mode: forwards;
   animation: pulse-opacity 1s alternate infinite;
+}
+
+.page .right-arrow.hide,
+.hero .arrow.hide {
+  animation: hide-opacity 1s 1;
+  animation-fill-mode: forwards;
 }
 
 .page .title {
@@ -126,7 +138,6 @@ a.rsvp {
 }
 
 .image {
-  height: 75vw;
   width: 100vw;
   align-self: center;
 }
