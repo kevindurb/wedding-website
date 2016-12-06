@@ -91,6 +91,7 @@ body * {
 
 .page.short {
   height: auto;
+  min-height: none;
 }
 
 .page .images {
