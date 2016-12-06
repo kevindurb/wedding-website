@@ -120,6 +120,7 @@ a.rsvp {
   flex-wrap: nowrap;
   overflow-x: scroll;
   max-height: 100vh;
+  background-color: #212121;
   -webkit-overflow-scrolling: touch;
 }
 
