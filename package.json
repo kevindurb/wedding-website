@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "surge -p ."
+    "deploy": "surge -p .",
+    "start": "live-server"
   },
   "repository": "git+https://github.com/kevindurb/wedding-website.git",
   "author": "Kevin Durbin <kevindurb@gmail.com>",
@@ -14,6 +15,7 @@
   },
   "homepage": "https://github.com/kevindurb/wedding-website#readme",
   "dependencies": {
+    "live-server": "^1.2.0",
     "surge": "^0.18.0"
   }
 }
