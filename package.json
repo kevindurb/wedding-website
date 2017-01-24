@@ -1,0 +1,19 @@
+{
+  "name": "wedding-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "surge -p ."
+  },
+  "repository": "git+https://github.com/kevindurb/wedding-website.git",
+  "author": "Kevin Durbin <kevindurb@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevindurb/wedding-website/issues"
+  },
+  "homepage": "https://github.com/kevindurb/wedding-website#readme",
+  "dependencies": {
+    "surge": "^0.18.0"
+  }
+}
