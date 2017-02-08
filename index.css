@@ -106,6 +106,19 @@ a.rsvp {
   padding: 64px 32px;
 }
 
+a.floating-rsvp {
+  display: block;
+  width: 100vw;
+  position: absolute;
+  background-color: rgba(0,0,0,0.5);
+  color: #fafafa;
+  text-align: center;
+  font-size: 48px;
+  padding: 32px 32px;
+  top: 0;
+  left: 0;
+}
+
 .page.short {
   height: auto;
   min-height: none;
@@ -144,6 +157,6 @@ a.rsvp {
   align-self: center;
 }
 
-.registry-link {
+.content-link {
   margin: 16px 0;
 }

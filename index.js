@@ -1,11 +1,26 @@
 function hideDownArrow() {
   var arrow = document.querySelector('.hero .arrow');
-  arrow.classList.add('hide');
+  var currentScroll = window.scrollY;
+
+  if (currentScroll > 0) {
+    arrow.classList.add('hide');
+  }
+  else {
+    arrow.classList.remove('hide');
+  }
 }
 
 function hideGalleryArrow() {
+  var gallery = document.querySelector('.images');
   var arrow = document.querySelector('.right-arrow');
-  arrow.classList.add('hide');
+  var currentScroll = gallery.scrollLeft;
+
+  if (currentScroll > 0) {
+    arrow.classList.add('hide');
+  }
+  else {
+    arrow.classList.remove('hide');
+  }
 }
 
 function init() {
