@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "surge",
+    "deploy": "surge -p .",
     "start": "live-server"
   },
   "repository": "git+https://github.com/kevindurb/wedding-website.git",
