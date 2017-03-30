@@ -39,11 +39,11 @@ function stopGalleryFlash() {
 }
 
 function scrollGalleryLeft() {
-  gallery.scrollLeft -= 10;
+  gallery.scrollLeft -= 4;
 }
 
 function scrollGalleryRight() {
-  gallery.scrollLeft += 10;
+  gallery.scrollLeft += 4;
 }
 
 function setupMouseScrolling() {
@@ -54,7 +54,7 @@ function setupMouseScrolling() {
   leftArrow.classList.add('mouse');
 
   leftArrow.addEventListener('mousedown', function() {
-    scrollLeftInterval = setInterval(scrollGalleryLeft, 10);
+    scrollLeftInterval = setInterval(scrollGalleryLeft, 1);
   });
 
   leftArrow.addEventListener('mouseup', function() {
@@ -62,7 +62,7 @@ function setupMouseScrolling() {
   });
 
   rightArrow.addEventListener('mousedown', function() {
-    scrollRightInterval = setInterval(scrollGalleryRight, 10);
+    scrollRightInterval = setInterval(scrollGalleryRight, 1);
   });
 
   rightArrow.addEventListener('mouseup', function() {
