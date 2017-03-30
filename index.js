@@ -1,35 +1,87 @@
+var isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints;
+var gallery = document.querySelector('.images');
+var rightArrow = document.querySelector('.right-arrow');
+var leftArrow = document.querySelector('.left-arrow');
+var heroArrow = document.querySelector('.hero .arrow');
+
 function hideDownArrow() {
-  var arrow = document.querySelector('.hero .arrow');
   var currentScroll = window.scrollY;
 
   if (currentScroll > 0) {
-    arrow.classList.add('hide');
+    heroArrow.classList.add('hide');
   }
   else {
-    arrow.classList.remove('hide');
+    heroArrow.classList.remove('hide');
   }
 }
 
 function hideGalleryArrow() {
-  var gallery = document.querySelector('.images');
-  var arrow = document.querySelector('.right-arrow');
   var currentScroll = gallery.scrollLeft;
+  var maxScroll = gallery.scrollWidth - gallery.offsetWidth;
 
-  if (currentScroll > 0) {
-    arrow.classList.add('hide');
+  if (currentScroll === 0) {
+    rightArrow.classList.remove('hide');
+    leftArrow.classList.add('hide');
+  }
+  else if (currentScroll ===  maxScroll) {
+    rightArrow.classList.add('hide');
+    leftArrow.classList.remove('hide');
   }
   else {
-    arrow.classList.remove('hide');
+    rightArrow.classList.remove('hide');
+    leftArrow.classList.remove('hide');
   }
+}
+
+function stopGalleryFlash() {
+  rightArrow.classList.add('static');
+  leftArrow.classList.add('static');
+}
+
+function scrollGalleryLeft() {
+  gallery.scrollLeft -= 10;
+}
+
+function scrollGalleryRight() {
+  gallery.scrollLeft += 10;
+}
+
+function setupMouseScrolling() {
+  var scrollLeftInterval = 0;
+  var scrollRightInterval = 0;
+
+  rightArrow.classList.add('mouse');
+  leftArrow.classList.add('mouse');
+
+  leftArrow.addEventListener('mousedown', function() {
+    scrollLeftInterval = setInterval(scrollGalleryLeft, 10);
+  });
+
+  leftArrow.addEventListener('mouseup', function() {
+    clearInterval(scrollLeftInterval);
+  });
+
+  rightArrow.addEventListener('mousedown', function() {
+    scrollRightInterval = setInterval(scrollGalleryRight, 10);
+  });
+
+  rightArrow.addEventListener('mouseup', function() {
+    clearInterval(scrollRightInterval);
+  });
 }
 
 function init() {
   console.log('init');
-  var gallery = document.querySelector('.images');
 
   document.addEventListener('scroll', hideDownArrow);
 
   gallery.addEventListener('scroll', hideGalleryArrow);
+  hideGalleryArrow();
+
+  if (!isTouchDevice) {
+    stopGalleryFlash();
+    setupMouseScrolling();
+  }
 };
 
 window.addEventListener('DOMContentLoaded', init, false);
